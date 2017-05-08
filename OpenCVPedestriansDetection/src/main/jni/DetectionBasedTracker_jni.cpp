@@ -63,9 +63,9 @@ struct DetectorAgregator {
     }
 };
 
-JNIEXPORT jlong JNICALL Java_org_opencv_samples_facedetect_DetectionBasedTracker_nativeCreateObject
+JNIEXPORT jlong JNICALL Java_org_opencv_samples_pedestriansdetect_DetectionBasedTracker_nativeCreateObject
         (JNIEnv *jenv, jclass, jstring jFileName, jint faceSize) {
-    LOGD("Java_org_opencv_samples_facedetect_DetectionBasedTracker_nativeCreateObject enter");
+    LOGD("Java_org_opencv_samples_pedestriansdetect_DetectionBasedTracker_nativeCreateObject enter");
     const char *jnamestr = jenv->GetStringUTFChars(jFileName, NULL);
     string stdFileName(jnamestr);
     jlong result = 0;
@@ -73,7 +73,7 @@ JNIEXPORT jlong JNICALL Java_org_opencv_samples_facedetect_DetectionBasedTracker
     Mat matrice = Mat(1,256,CV_8UC4);
     matrice.create(matrice.size(),matrice.type());
 
-    LOGD("Java_org_opencv_samples_facedetect_DetectionBasedTracker_nativeCreateObject");
+    LOGD("Java_org_opencv_samples_pedestriansdetect_DetectionBasedTracker_nativeCreateObject");
     try {
         cv::Ptr<CascadeDetectorAdapter> mainDetector = makePtr<CascadeDetectorAdapter>(
                 makePtr<CascadeClassifier>(stdFileName));
@@ -99,13 +99,13 @@ JNIEXPORT jlong JNICALL Java_org_opencv_samples_facedetect_DetectionBasedTracker
         return 0;
     }
 
-    LOGD("Java_org_opencv_samples_facedetect_DetectionBasedTracker_nativeCreateObject exit");
+    LOGD("Java_org_opencv_samples_pedestriansdetect_DetectionBasedTracker_nativeCreateObject exit");
     return result;
 }
 
-JNIEXPORT void JNICALL Java_org_opencv_samples_facedetect_DetectionBasedTracker_nativeDestroyObject
+JNIEXPORT void JNICALL Java_org_opencv_samples_pedestriansdetect_DetectionBasedTracker_nativeDestroyObject
         (JNIEnv *jenv, jclass, jlong thiz) {
-    LOGD("Java_org_opencv_samples_facedetect_DetectionBasedTracker_nativeDestroyObject");
+    LOGD("Java_org_opencv_samples_pedestriansdetect_DetectionBasedTracker_nativeDestroyObject");
 
     try {
         if (thiz != 0) {
@@ -125,12 +125,12 @@ JNIEXPORT void JNICALL Java_org_opencv_samples_facedetect_DetectionBasedTracker_
         jclass je = jenv->FindClass("java/lang/Exception");
         jenv->ThrowNew(je, "Unknown exception in JNI code of DetectionBasedTracker.nativeDestroyObject()");
     }
-    LOGD("Java_org_opencv_samples_facedetect_DetectionBasedTracker_nativeDestroyObject exit");
+    LOGD("Java_org_opencv_samples_pedestriansdetect_DetectionBasedTracker_nativeDestroyObject exit");
 }
 
-JNIEXPORT void JNICALL Java_org_opencv_samples_facedetect_DetectionBasedTracker_nativeStart
+JNIEXPORT void JNICALL Java_org_opencv_samples_pedestriansdetect_DetectionBasedTracker_nativeStart
         (JNIEnv *jenv, jclass, jlong thiz) {
-    LOGD("Java_org_opencv_samples_facedetect_DetectionBasedTracker_nativeStart");
+    LOGD("Java_org_opencv_samples_pedestriansdetect_DetectionBasedTracker_nativeStart");
 
     try {
         ((DetectorAgregator *) thiz)->tracker->run();
@@ -147,12 +147,12 @@ JNIEXPORT void JNICALL Java_org_opencv_samples_facedetect_DetectionBasedTracker_
         jclass je = jenv->FindClass("java/lang/Exception");
         jenv->ThrowNew(je, "Unknown exception in JNI code of DetectionBasedTracker.nativeStart()");
     }
-    LOGD("Java_org_opencv_samples_facedetect_DetectionBasedTracker_nativeStart exit");
+    LOGD("Java_org_opencv_samples_pedestriansdetect_DetectionBasedTracker_nativeStart exit");
 }
 
-JNIEXPORT void JNICALL Java_org_opencv_samples_facedetect_DetectionBasedTracker_nativeStop
+JNIEXPORT void JNICALL Java_org_opencv_samples_pedestriansdetect_DetectionBasedTracker_nativeStop
         (JNIEnv *jenv, jclass, jlong thiz) {
-    LOGD("Java_org_opencv_samples_facedetect_DetectionBasedTracker_nativeStop");
+    LOGD("Java_org_opencv_samples_pedestriansdetect_DetectionBasedTracker_nativeStop");
 
     try {
         ((DetectorAgregator *) thiz)->tracker->stop();
@@ -169,12 +169,12 @@ JNIEXPORT void JNICALL Java_org_opencv_samples_facedetect_DetectionBasedTracker_
         jclass je = jenv->FindClass("java/lang/Exception");
         jenv->ThrowNew(je, "Unknown exception in JNI code of DetectionBasedTracker.nativeStop()");
     }
-    LOGD("Java_org_opencv_samples_facedetect_DetectionBasedTracker_nativeStop exit");
+    LOGD("Java_org_opencv_samples_pedestriansdetect_DetectionBasedTracker_nativeStop exit");
 }
 
-JNIEXPORT void JNICALL Java_org_opencv_samples_facedetect_DetectionBasedTracker_nativeSetFaceSize
+JNIEXPORT void JNICALL Java_org_opencv_samples_pedestriansdetect_DetectionBasedTracker_nativeSetFaceSize
         (JNIEnv *jenv, jclass, jlong thiz, jint faceSize) {
-    LOGD("Java_org_opencv_samples_facedetect_DetectionBasedTracker_nativeSetFaceSize -- BEGIN");
+    LOGD("Java_org_opencv_samples_pedestriansdetect_DetectionBasedTracker_nativeSetFaceSize -- BEGIN");
 
     try {
         if (faceSize > 0) {
@@ -194,13 +194,13 @@ JNIEXPORT void JNICALL Java_org_opencv_samples_facedetect_DetectionBasedTracker_
         jclass je = jenv->FindClass("java/lang/Exception");
         jenv->ThrowNew(je, "Unknown exception in JNI code of DetectionBasedTracker.nativeSetFaceSize()");
     }
-    LOGD("Java_org_opencv_samples_facedetect_DetectionBasedTracker_nativeSetFaceSize -- END");
+    LOGD("Java_org_opencv_samples_pedestriansdetect_DetectionBasedTracker_nativeSetFaceSize -- END");
 }
 
 
-JNIEXPORT void JNICALL Java_org_opencv_samples_facedetect_DetectionBasedTracker_nativeDetect
+JNIEXPORT void JNICALL Java_org_opencv_samples_pedestriansdetect_DetectionBasedTracker_nativeDetect
         (JNIEnv *jenv, jclass, jlong thiz, jlong imageGray, jlong faces) {
-    LOGD("Java_org_opencv_samples_facedetect_DetectionBasedTracker_nativeDetect");
+    LOGD("Java_org_opencv_samples_pedestriansdetect_DetectionBasedTracker_nativeDetect");
 
     try {
         vector<Rect> RectFaces;
@@ -220,5 +220,5 @@ JNIEXPORT void JNICALL Java_org_opencv_samples_facedetect_DetectionBasedTracker_
         jclass je = jenv->FindClass("java/lang/Exception");
         jenv->ThrowNew(je, "Unknown exception in JNI code DetectionBasedTracker.nativeDetect()");
     }
-    LOGD("Java_org_opencv_samples_facedetect_DetectionBasedTracker_nativeDetect END");
+    LOGD("Java_org_opencv_samples_pedestriansdetect_DetectionBasedTracker_nativeDetect END");
 }

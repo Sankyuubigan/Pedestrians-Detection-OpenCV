@@ -1,3 +1,6 @@
 # ninja log v5
 0	1496	0	CMakeFiles/detectionBasedTracker.dir/DetectionBasedTracker_jni.cpp.o	5b08c8eb09041886
 1498	1647	0	C:/Users/Nilden/AndroidStudioProjects/Pedestrians-Detection-OpenCV/OpenCVPedestriansDetection/build/intermediates/cmake/debug/obj/arm64-v8a/libdetectionBasedTracker.so	a74de89e2baad72c
+5	216	0	C:/Users/Nilden/AndroidStudioProjects/Pedestrians-Detection-OpenCV/OpenCVPedestriansDetection/build/intermediates/cmake/debug/obj/arm64-v8a/libdetectionBasedTracker.so	a74de89e2baad72c
+3	1676	0	CMakeFiles/detectionBasedTracker.dir/DetectionBasedTracker_jni.cpp.o	5b08c8eb09041886
+1676	1816	0	C:/Users/Nilden/AndroidStudioProjects/Pedestrians-Detection-OpenCV/OpenCVPedestriansDetection/build/intermediates/cmake/debug/obj/arm64-v8a/libdetectionBasedTracker.so	a74de89e2baad72c

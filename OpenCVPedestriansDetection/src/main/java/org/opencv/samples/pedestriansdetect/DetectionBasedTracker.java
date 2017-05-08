@@ -1,4 +1,4 @@
-package org.opencv.samples.facedetect;
+package org.opencv.samples.pedestriansdetect;
 
 import org.opencv.core.Mat;
 import org.opencv.core.MatOfRect;
