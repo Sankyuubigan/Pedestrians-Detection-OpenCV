@@ -1,0 +1,3 @@
+C:/Users/Nilden/AndroidStudioProjects/Pedestrians-Detection-OpenCV/OpenCVPedestriansDetection/.externalNativeBuild/cmake/release/x86/CMakeFiles/detectionBasedTracker.dir
+C:/Users/Nilden/AndroidStudioProjects/Pedestrians-Detection-OpenCV/OpenCVPedestriansDetection/.externalNativeBuild/cmake/release/x86/CMakeFiles/edit_cache.dir
+C:/Users/Nilden/AndroidStudioProjects/Pedestrians-Detection-OpenCV/OpenCVPedestriansDetection/.externalNativeBuild/cmake/release/x86/CMakeFiles/rebuild_cache.dir

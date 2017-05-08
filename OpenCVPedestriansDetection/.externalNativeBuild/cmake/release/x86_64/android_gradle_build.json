@@ -1,0 +1,177 @@
+
+{
+	"buildFiles" : 
+	[
+		"C:/Users/Nilden/AndroidStudioProjects/Pedestrians-Detection-OpenCV/OpenCVPedestriansDetection/src/main/jni/CMakeLists.txt"
+	],
+	"cleanCommands" : 
+	[
+		"W:\\AndroidSDK\\cmake\\3.6.3155560\\bin\\cmake.exe --build C:\\Users\\Nilden\\AndroidStudioProjects\\Pedestrians-Detection-OpenCV\\OpenCVPedestriansDetection\\.externalNativeBuild\\cmake\\release\\x86_64 --target clean"
+	],
+	"cppFileExtensions" : [ "cpp" ],
+	"libraries" : 
+	{
+		"detectionBasedTracker-Release-x86_64" : 
+		{
+			"abi" : "x86_64",
+			"artifactName" : "detectionBasedTracker",
+			"buildCommand" : "W:\\AndroidSDK\\cmake\\3.6.3155560\\bin\\cmake.exe --build C:\\Users\\Nilden\\AndroidStudioProjects\\Pedestrians-Detection-OpenCV\\OpenCVPedestriansDetection\\.externalNativeBuild\\cmake\\release\\x86_64 --target detectionBasedTracker",
+			"buildType" : "release",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android --gcc-toolchain=W:/AndroidSDK/ndk-bundle/toolchains/x86_64-4.9/prebuilt/windows-x86_64 --sysroot=W:/AndroidSDK/ndk-bundle/platforms/android-21/arch-x86_64  -DdetectionBasedTracker_EXPORTS -IC:\\Users\\Nilden\\AndroidStudioProjects\\Pedestrians-Detection-OpenCV\\OpenCVPedestriansDetection\\src\\main\\jni\\include -isystem W:\\AndroidSDK\\ndk-bundle\\sources\\cxx-stl\\gnu-libstdc++\\4.9\\include -isystem W:\\AndroidSDK\\ndk-bundle\\sources\\cxx-stl\\gnu-libstdc++\\4.9\\libs\\x86_64\\include -isystem W:\\AndroidSDK\\ndk-bundle\\sources\\cxx-stl\\gnu-libstdc++\\4.9\\include\\backward  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -frtti -fexceptions -std=gnu++11 -fexceptions -frtti -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC    -c ",
+					"src" : "C:/Users/Nilden/AndroidStudioProjects/Pedestrians-Detection-OpenCV/OpenCVPedestriansDetection/src/main/jni/DetectionBasedTracker_jni.cpp",
+					"workingDirectory" : "C:/Users/Nilden/AndroidStudioProjects/Pedestrians-Detection-OpenCV/OpenCVPedestriansDetection/.externalNativeBuild/cmake/release/x86_64"
+				}
+			],
+			"output" : "C:/Users/Nilden/AndroidStudioProjects/Pedestrians-Detection-OpenCV/OpenCVPedestriansDetection/build/intermediates/cmake/release/obj/x86_64/libdetectionBasedTracker.so",
+			"toolchain" : "2412574867"
+		},
+		"libopencv_calib3d-Release-x86_64" : 
+		{
+			"abi" : "x86_64",
+			"artifactName" : "libopencv_calib3d",
+			"buildType" : "release",
+			"output" : "C:/Users/Nilden/AndroidStudioProjects/Pedestrians-Detection-OpenCV/OpenCVPedestriansDetection/src/main/jni/../jniLibs/x86_64/libopencv_calib3d.a",
+			"toolchain" : "2412574867"
+		},
+		"libopencv_core-Release-x86_64" : 
+		{
+			"abi" : "x86_64",
+			"artifactName" : "libopencv_core",
+			"buildType" : "release",
+			"output" : "C:/Users/Nilden/AndroidStudioProjects/Pedestrians-Detection-OpenCV/OpenCVPedestriansDetection/src/main/jni/../jniLibs/x86_64/libopencv_core.a",
+			"toolchain" : "2412574867"
+		},
+		"libopencv_features2d-Release-x86_64" : 
+		{
+			"abi" : "x86_64",
+			"artifactName" : "libopencv_features2d",
+			"buildType" : "release",
+			"output" : "C:/Users/Nilden/AndroidStudioProjects/Pedestrians-Detection-OpenCV/OpenCVPedestriansDetection/src/main/jni/../jniLibs/x86_64/libopencv_features2d.a",
+			"toolchain" : "2412574867"
+		},
+		"libopencv_flann-Release-x86_64" : 
+		{
+			"abi" : "x86_64",
+			"artifactName" : "libopencv_flann",
+			"buildType" : "release",
+			"output" : "C:/Users/Nilden/AndroidStudioProjects/Pedestrians-Detection-OpenCV/OpenCVPedestriansDetection/src/main/jni/../jniLibs/x86_64/libopencv_flann.a",
+			"toolchain" : "2412574867"
+		},
+		"libopencv_highgui-Release-x86_64" : 
+		{
+			"abi" : "x86_64",
+			"artifactName" : "libopencv_highgui",
+			"buildType" : "release",
+			"output" : "C:/Users/Nilden/AndroidStudioProjects/Pedestrians-Detection-OpenCV/OpenCVPedestriansDetection/src/main/jni/../jniLibs/x86_64/libopencv_highgui.a",
+			"toolchain" : "2412574867"
+		},
+		"libopencv_imgcodecs-Release-x86_64" : 
+		{
+			"abi" : "x86_64",
+			"artifactName" : "libopencv_imgcodecs",
+			"buildType" : "release",
+			"output" : "C:/Users/Nilden/AndroidStudioProjects/Pedestrians-Detection-OpenCV/OpenCVPedestriansDetection/src/main/jni/../jniLibs/x86_64/libopencv_imgcodecs.a",
+			"toolchain" : "2412574867"
+		},
+		"libopencv_imgproc-Release-x86_64" : 
+		{
+			"abi" : "x86_64",
+			"artifactName" : "libopencv_imgproc",
+			"buildType" : "release",
+			"output" : "C:/Users/Nilden/AndroidStudioProjects/Pedestrians-Detection-OpenCV/OpenCVPedestriansDetection/src/main/jni/../jniLibs/x86_64/libopencv_imgproc.a",
+			"toolchain" : "2412574867"
+		},
+		"libopencv_java3-Release-x86_64" : 
+		{
+			"abi" : "x86_64",
+			"artifactName" : "libopencv_java3",
+			"buildType" : "release",
+			"output" : "C:/Users/Nilden/AndroidStudioProjects/Pedestrians-Detection-OpenCV/OpenCVPedestriansDetection/src/main/jni/../jniLibs/x86_64/libopencv_java3.so",
+			"toolchain" : "2412574867"
+		},
+		"libopencv_ml-Release-x86_64" : 
+		{
+			"abi" : "x86_64",
+			"artifactName" : "libopencv_ml",
+			"buildType" : "release",
+			"output" : "C:/Users/Nilden/AndroidStudioProjects/Pedestrians-Detection-OpenCV/OpenCVPedestriansDetection/src/main/jni/../jniLibs/x86_64/libopencv_ml.a",
+			"toolchain" : "2412574867"
+		},
+		"libopencv_objdetect-Release-x86_64" : 
+		{
+			"abi" : "x86_64",
+			"artifactName" : "libopencv_objdetect",
+			"buildType" : "release",
+			"output" : "C:/Users/Nilden/AndroidStudioProjects/Pedestrians-Detection-OpenCV/OpenCVPedestriansDetection/src/main/jni/../jniLibs/x86_64/libopencv_objdetect.a",
+			"toolchain" : "2412574867"
+		},
+		"libopencv_photo-Release-x86_64" : 
+		{
+			"abi" : "x86_64",
+			"artifactName" : "libopencv_photo",
+			"buildType" : "release",
+			"output" : "C:/Users/Nilden/AndroidStudioProjects/Pedestrians-Detection-OpenCV/OpenCVPedestriansDetection/src/main/jni/../jniLibs/x86_64/libopencv_photo.a",
+			"toolchain" : "2412574867"
+		},
+		"libopencv_shape-Release-x86_64" : 
+		{
+			"abi" : "x86_64",
+			"artifactName" : "libopencv_shape",
+			"buildType" : "release",
+			"output" : "C:/Users/Nilden/AndroidStudioProjects/Pedestrians-Detection-OpenCV/OpenCVPedestriansDetection/src/main/jni/../jniLibs/x86_64/libopencv_shape.a",
+			"toolchain" : "2412574867"
+		},
+		"libopencv_stitching-Release-x86_64" : 
+		{
+			"abi" : "x86_64",
+			"artifactName" : "libopencv_stitching",
+			"buildType" : "release",
+			"output" : "C:/Users/Nilden/AndroidStudioProjects/Pedestrians-Detection-OpenCV/OpenCVPedestriansDetection/src/main/jni/../jniLibs/x86_64/libopencv_stitching.a",
+			"toolchain" : "2412574867"
+		},
+		"libopencv_superres-Release-x86_64" : 
+		{
+			"abi" : "x86_64",
+			"artifactName" : "libopencv_superres",
+			"buildType" : "release",
+			"output" : "C:/Users/Nilden/AndroidStudioProjects/Pedestrians-Detection-OpenCV/OpenCVPedestriansDetection/src/main/jni/../jniLibs/x86_64/libopencv_superres.a",
+			"toolchain" : "2412574867"
+		},
+		"libopencv_video-Release-x86_64" : 
+		{
+			"abi" : "x86_64",
+			"artifactName" : "libopencv_video",
+			"buildType" : "release",
+			"output" : "C:/Users/Nilden/AndroidStudioProjects/Pedestrians-Detection-OpenCV/OpenCVPedestriansDetection/src/main/jni/../jniLibs/x86_64/libopencv_video.a",
+			"toolchain" : "2412574867"
+		},
+		"libopencv_videoio-Release-x86_64" : 
+		{
+			"abi" : "x86_64",
+			"artifactName" : "libopencv_videoio",
+			"buildType" : "release",
+			"output" : "C:/Users/Nilden/AndroidStudioProjects/Pedestrians-Detection-OpenCV/OpenCVPedestriansDetection/src/main/jni/../jniLibs/x86_64/libopencv_videoio.a",
+			"toolchain" : "2412574867"
+		},
+		"libopencv_videostab-Release-x86_64" : 
+		{
+			"abi" : "x86_64",
+			"artifactName" : "libopencv_videostab",
+			"buildType" : "release",
+			"output" : "C:/Users/Nilden/AndroidStudioProjects/Pedestrians-Detection-OpenCV/OpenCVPedestriansDetection/src/main/jni/../jniLibs/x86_64/libopencv_videostab.a",
+			"toolchain" : "2412574867"
+		}
+	},
+	"toolchains" : 
+	{
+		"2412574867" : 
+		{
+			"cCompilerExecutable" : "W:/AndroidSDK/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe",
+			"cppCompilerExecutable" : "W:/AndroidSDK/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe"
+		}
+	}
+}

@@ -1,0 +1,18 @@
+Executable : W:\AndroidSDK\cmake\3.6.3155560\bin\cmake.exe
+arguments : 
+-HC:\Users\Nilden\AndroidStudioProjects\Pedestrians-Detection-OpenCV\OpenCVPedestriansDetection\src\main\jni
+-BC:\Users\Nilden\AndroidStudioProjects\Pedestrians-Detection-OpenCV\OpenCVPedestriansDetection\.externalNativeBuild\cmake\debug\armeabi
+-GAndroid Gradle - Ninja
+-DANDROID_ABI=armeabi
+-DANDROID_NDK=W:\AndroidSDK\ndk-bundle
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=C:\Users\Nilden\AndroidStudioProjects\Pedestrians-Detection-OpenCV\OpenCVPedestriansDetection\build\intermediates\cmake\debug\obj\armeabi
+-DCMAKE_BUILD_TYPE=Debug
+-DCMAKE_MAKE_PROGRAM=W:\AndroidSDK\cmake\3.6.3155560\bin\ninja.exe
+-DCMAKE_TOOLCHAIN_FILE=W:\AndroidSDK\ndk-bundle\build\cmake\android.toolchain.cmake
+-DANDROID_PLATFORM=android-9
+-DCMAKE_CXX_FLAGS=-frtti -fexceptions
+-DANDROID_PLATFORM=android-13
+-DANDROID_TOOLCHAIN=clang
+-DANDROID_STL=gnustl_static
+jvmArgs : 
+

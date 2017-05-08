@@ -1,0 +1,177 @@
+
+{
+	"buildFiles" : 
+	[
+		"C:/Users/Nilden/AndroidStudioProjects/Pedestrians-Detection-OpenCV/OpenCVPedestriansDetection/src/main/jni/CMakeLists.txt"
+	],
+	"cleanCommands" : 
+	[
+		"W:\\AndroidSDK\\cmake\\3.6.3155560\\bin\\cmake.exe --build C:\\Users\\Nilden\\AndroidStudioProjects\\Pedestrians-Detection-OpenCV\\OpenCVPedestriansDetection\\.externalNativeBuild\\cmake\\release\\armeabi-v7a --target clean"
+	],
+	"cppFileExtensions" : [ "cpp" ],
+	"libraries" : 
+	{
+		"detectionBasedTracker-Release-armeabi-v7a" : 
+		{
+			"abi" : "armeabi-v7a",
+			"artifactName" : "detectionBasedTracker",
+			"buildCommand" : "W:\\AndroidSDK\\cmake\\3.6.3155560\\bin\\cmake.exe --build C:\\Users\\Nilden\\AndroidStudioProjects\\Pedestrians-Detection-OpenCV\\OpenCVPedestriansDetection\\.externalNativeBuild\\cmake\\release\\armeabi-v7a --target detectionBasedTracker",
+			"buildType" : "release",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=armv7-none-linux-androideabi --gcc-toolchain=W:/AndroidSDK/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/windows-x86_64 --sysroot=W:/AndroidSDK/ndk-bundle/platforms/android-13/arch-arm  -DdetectionBasedTracker_EXPORTS -IC:\\Users\\Nilden\\AndroidStudioProjects\\Pedestrians-Detection-OpenCV\\OpenCVPedestriansDetection\\src\\main\\jni\\include -isystem W:\\AndroidSDK\\ndk-bundle\\sources\\cxx-stl\\gnu-libstdc++\\4.9\\include -isystem W:\\AndroidSDK\\ndk-bundle\\sources\\cxx-stl\\gnu-libstdc++\\4.9\\libs\\armeabi-v7a\\include -isystem W:\\AndroidSDK\\ndk-bundle\\sources\\cxx-stl\\gnu-libstdc++\\4.9\\include\\backward  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -fno-integrated-as -mthumb -Wa,--noexecstack -Wformat -Werror=format-security  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -fno-integrated-as -mthumb -Wa,--noexecstack -Wformat -Werror=format-security  -frtti -fexceptions -std=gnu++11 -fexceptions -frtti -Os -DNDEBUG -Os -DNDEBUG  -fPIC    -c ",
+					"src" : "C:/Users/Nilden/AndroidStudioProjects/Pedestrians-Detection-OpenCV/OpenCVPedestriansDetection/src/main/jni/DetectionBasedTracker_jni.cpp",
+					"workingDirectory" : "C:/Users/Nilden/AndroidStudioProjects/Pedestrians-Detection-OpenCV/OpenCVPedestriansDetection/.externalNativeBuild/cmake/release/armeabi-v7a"
+				}
+			],
+			"output" : "C:/Users/Nilden/AndroidStudioProjects/Pedestrians-Detection-OpenCV/OpenCVPedestriansDetection/build/intermediates/cmake/release/obj/armeabi-v7a/libdetectionBasedTracker.so",
+			"toolchain" : "2412574867"
+		},
+		"libopencv_calib3d-Release-armeabi-v7a" : 
+		{
+			"abi" : "armeabi-v7a",
+			"artifactName" : "libopencv_calib3d",
+			"buildType" : "release",
+			"output" : "C:/Users/Nilden/AndroidStudioProjects/Pedestrians-Detection-OpenCV/OpenCVPedestriansDetection/src/main/jni/../jniLibs/armeabi-v7a/libopencv_calib3d.a",
+			"toolchain" : "2412574867"
+		},
+		"libopencv_core-Release-armeabi-v7a" : 
+		{
+			"abi" : "armeabi-v7a",
+			"artifactName" : "libopencv_core",
+			"buildType" : "release",
+			"output" : "C:/Users/Nilden/AndroidStudioProjects/Pedestrians-Detection-OpenCV/OpenCVPedestriansDetection/src/main/jni/../jniLibs/armeabi-v7a/libopencv_core.a",
+			"toolchain" : "2412574867"
+		},
+		"libopencv_features2d-Release-armeabi-v7a" : 
+		{
+			"abi" : "armeabi-v7a",
+			"artifactName" : "libopencv_features2d",
+			"buildType" : "release",
+			"output" : "C:/Users/Nilden/AndroidStudioProjects/Pedestrians-Detection-OpenCV/OpenCVPedestriansDetection/src/main/jni/../jniLibs/armeabi-v7a/libopencv_features2d.a",
+			"toolchain" : "2412574867"
+		},
+		"libopencv_flann-Release-armeabi-v7a" : 
+		{
+			"abi" : "armeabi-v7a",
+			"artifactName" : "libopencv_flann",
+			"buildType" : "release",
+			"output" : "C:/Users/Nilden/AndroidStudioProjects/Pedestrians-Detection-OpenCV/OpenCVPedestriansDetection/src/main/jni/../jniLibs/armeabi-v7a/libopencv_flann.a",
+			"toolchain" : "2412574867"
+		},
+		"libopencv_highgui-Release-armeabi-v7a" : 
+		{
+			"abi" : "armeabi-v7a",
+			"artifactName" : "libopencv_highgui",
+			"buildType" : "release",
+			"output" : "C:/Users/Nilden/AndroidStudioProjects/Pedestrians-Detection-OpenCV/OpenCVPedestriansDetection/src/main/jni/../jniLibs/armeabi-v7a/libopencv_highgui.a",
+			"toolchain" : "2412574867"
+		},
+		"libopencv_imgcodecs-Release-armeabi-v7a" : 
+		{
+			"abi" : "armeabi-v7a",
+			"artifactName" : "libopencv_imgcodecs",
+			"buildType" : "release",
+			"output" : "C:/Users/Nilden/AndroidStudioProjects/Pedestrians-Detection-OpenCV/OpenCVPedestriansDetection/src/main/jni/../jniLibs/armeabi-v7a/libopencv_imgcodecs.a",
+			"toolchain" : "2412574867"
+		},
+		"libopencv_imgproc-Release-armeabi-v7a" : 
+		{
+			"abi" : "armeabi-v7a",
+			"artifactName" : "libopencv_imgproc",
+			"buildType" : "release",
+			"output" : "C:/Users/Nilden/AndroidStudioProjects/Pedestrians-Detection-OpenCV/OpenCVPedestriansDetection/src/main/jni/../jniLibs/armeabi-v7a/libopencv_imgproc.a",
+			"toolchain" : "2412574867"
+		},
+		"libopencv_java3-Release-armeabi-v7a" : 
+		{
+			"abi" : "armeabi-v7a",
+			"artifactName" : "libopencv_java3",
+			"buildType" : "release",
+			"output" : "C:/Users/Nilden/AndroidStudioProjects/Pedestrians-Detection-OpenCV/OpenCVPedestriansDetection/src/main/jni/../jniLibs/armeabi-v7a/libopencv_java3.so",
+			"toolchain" : "2412574867"
+		},
+		"libopencv_ml-Release-armeabi-v7a" : 
+		{
+			"abi" : "armeabi-v7a",
+			"artifactName" : "libopencv_ml",
+			"buildType" : "release",
+			"output" : "C:/Users/Nilden/AndroidStudioProjects/Pedestrians-Detection-OpenCV/OpenCVPedestriansDetection/src/main/jni/../jniLibs/armeabi-v7a/libopencv_ml.a",
+			"toolchain" : "2412574867"
+		},
+		"libopencv_objdetect-Release-armeabi-v7a" : 
+		{
+			"abi" : "armeabi-v7a",
+			"artifactName" : "libopencv_objdetect",
+			"buildType" : "release",
+			"output" : "C:/Users/Nilden/AndroidStudioProjects/Pedestrians-Detection-OpenCV/OpenCVPedestriansDetection/src/main/jni/../jniLibs/armeabi-v7a/libopencv_objdetect.a",
+			"toolchain" : "2412574867"
+		},
+		"libopencv_photo-Release-armeabi-v7a" : 
+		{
+			"abi" : "armeabi-v7a",
+			"artifactName" : "libopencv_photo",
+			"buildType" : "release",
+			"output" : "C:/Users/Nilden/AndroidStudioProjects/Pedestrians-Detection-OpenCV/OpenCVPedestriansDetection/src/main/jni/../jniLibs/armeabi-v7a/libopencv_photo.a",
+			"toolchain" : "2412574867"
+		},
+		"libopencv_shape-Release-armeabi-v7a" : 
+		{
+			"abi" : "armeabi-v7a",
+			"artifactName" : "libopencv_shape",
+			"buildType" : "release",
+			"output" : "C:/Users/Nilden/AndroidStudioProjects/Pedestrians-Detection-OpenCV/OpenCVPedestriansDetection/src/main/jni/../jniLibs/armeabi-v7a/libopencv_shape.a",
+			"toolchain" : "2412574867"
+		},
+		"libopencv_stitching-Release-armeabi-v7a" : 
+		{
+			"abi" : "armeabi-v7a",
+			"artifactName" : "libopencv_stitching",
+			"buildType" : "release",
+			"output" : "C:/Users/Nilden/AndroidStudioProjects/Pedestrians-Detection-OpenCV/OpenCVPedestriansDetection/src/main/jni/../jniLibs/armeabi-v7a/libopencv_stitching.a",
+			"toolchain" : "2412574867"
+		},
+		"libopencv_superres-Release-armeabi-v7a" : 
+		{
+			"abi" : "armeabi-v7a",
+			"artifactName" : "libopencv_superres",
+			"buildType" : "release",
+			"output" : "C:/Users/Nilden/AndroidStudioProjects/Pedestrians-Detection-OpenCV/OpenCVPedestriansDetection/src/main/jni/../jniLibs/armeabi-v7a/libopencv_superres.a",
+			"toolchain" : "2412574867"
+		},
+		"libopencv_video-Release-armeabi-v7a" : 
+		{
+			"abi" : "armeabi-v7a",
+			"artifactName" : "libopencv_video",
+			"buildType" : "release",
+			"output" : "C:/Users/Nilden/AndroidStudioProjects/Pedestrians-Detection-OpenCV/OpenCVPedestriansDetection/src/main/jni/../jniLibs/armeabi-v7a/libopencv_video.a",
+			"toolchain" : "2412574867"
+		},
+		"libopencv_videoio-Release-armeabi-v7a" : 
+		{
+			"abi" : "armeabi-v7a",
+			"artifactName" : "libopencv_videoio",
+			"buildType" : "release",
+			"output" : "C:/Users/Nilden/AndroidStudioProjects/Pedestrians-Detection-OpenCV/OpenCVPedestriansDetection/src/main/jni/../jniLibs/armeabi-v7a/libopencv_videoio.a",
+			"toolchain" : "2412574867"
+		},
+		"libopencv_videostab-Release-armeabi-v7a" : 
+		{
+			"abi" : "armeabi-v7a",
+			"artifactName" : "libopencv_videostab",
+			"buildType" : "release",
+			"output" : "C:/Users/Nilden/AndroidStudioProjects/Pedestrians-Detection-OpenCV/OpenCVPedestriansDetection/src/main/jni/../jniLibs/armeabi-v7a/libopencv_videostab.a",
+			"toolchain" : "2412574867"
+		}
+	},
+	"toolchains" : 
+	{
+		"2412574867" : 
+		{
+			"cCompilerExecutable" : "W:/AndroidSDK/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe",
+			"cppCompilerExecutable" : "W:/AndroidSDK/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe"
+		}
+	}
+}
