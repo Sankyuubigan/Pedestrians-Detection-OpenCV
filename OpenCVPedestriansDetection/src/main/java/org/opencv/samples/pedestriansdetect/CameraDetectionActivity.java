@@ -34,6 +34,10 @@ public class CameraDetectionActivity extends AppCompatActivity implements Camera
     public static final int JAVA_DETECTOR = 0;
     public static final int NATIVE_DETECTOR = 1;
 
+    private MenuItem mItem50;
+    private MenuItem mItem40;
+    private MenuItem mItem30;
+    private MenuItem mItem20;
     private MenuItem mItemType;
 
     private Mat mRgba;
@@ -198,6 +202,10 @@ public class CameraDetectionActivity extends AppCompatActivity implements Camera
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         Log.i(TAG, "called onCreateOptionsMenu");
+        mItem50 = menu.add("size 50%");
+        mItem40 = menu.add("size 40%");
+        mItem30 = menu.add("size 30%");
+        mItem20 = menu.add("size 20%");
         mItemType = menu.add(mDetectorName[mDetectorType]);
         return true;
     }
@@ -205,7 +213,15 @@ public class CameraDetectionActivity extends AppCompatActivity implements Camera
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         Log.i(TAG, "called onOptionsItemSelected; selected item: " + item);
-        if (item == mItemType) {
+        if (item == mItem50)
+            setMinSize(0.5f);
+        else if (item == mItem40)
+            setMinSize(0.4f);
+        else if (item == mItem30)
+            setMinSize(0.3f);
+        else if (item == mItem20)
+            setMinSize(0.2f);
+        else if (item == mItemType) {
             int tmpDetectorType = (mDetectorType + 1) % mDetectorName.length;
             item.setTitle(mDetectorName[tmpDetectorType]);
             setDetectorType(tmpDetectorType);
