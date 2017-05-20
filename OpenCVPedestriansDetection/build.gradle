@@ -5,7 +5,7 @@ android {
     buildToolsVersion '25.0.0'
 
     defaultConfig {
-        applicationId "org.opencv.samples.facedetect"
+        applicationId "com.nilden.appscorp.pedestriansdetect"
         minSdkVersion 9
         targetSdkVersion 24
 

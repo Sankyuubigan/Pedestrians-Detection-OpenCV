@@ -34,12 +34,16 @@ public class CameraDetectionActivity extends AppCompatActivity implements Camera
     public static final int JAVA_DETECTOR = 0;
     public static final int NATIVE_DETECTOR = 1;
 
+    private int minNeighbors = 2;
+    private int flags = 2;
     private MenuItem mItem50;
+    private MenuItem mItem;
     private MenuItem mItem40;
     private MenuItem mItem30;
     private MenuItem mItem20;
     private MenuItem mItemType;
 
+    private double scaleFactor = 1.1;
     private Mat mRgba;
     private Mat mGray;
     private File mCascadeFile;
@@ -106,6 +110,8 @@ public class CameraDetectionActivity extends AppCompatActivity implements Camera
             }
         }
     };
+    private double max_x=480;
+    private double max_y=480;
 
     public CameraDetectionActivity() {
         mDetectorName = new String[2];
@@ -183,8 +189,8 @@ public class CameraDetectionActivity extends AppCompatActivity implements Camera
 
         if (mDetectorType == JAVA_DETECTOR) {
             if (mJavaDetector != null)
-                mJavaDetector.detectMultiScale(mGray, locations, 1.1, 2, 2, // TODO: objdetect.CV_HAAR_SCALE_IMAGE
-                        new Size(mAbsoluteSize, mAbsoluteSize), new Size());
+                mJavaDetector.detectMultiScale(mGray, locations, scaleFactor, minNeighbors, flags, // TODO: objdetect.CV_HAAR_SCALE_IMAGE
+                        new Size(mAbsoluteSize, mAbsoluteSize), new Size(max_x,max_y));
         } else if (mDetectorType == NATIVE_DETECTOR) {
             if (mNativeDetector != null)
                 mNativeDetector.detect(mGray, locations);
@@ -202,10 +208,11 @@ public class CameraDetectionActivity extends AppCompatActivity implements Camera
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         Log.i(TAG, "called onCreateOptionsMenu");
-        mItem50 = menu.add("size 50%");
-        mItem40 = menu.add("size 40%");
-        mItem30 = menu.add("size 30%");
-        mItem20 = menu.add("size 20%");
+        mItem = menu.add("Optimize settings");
+        mItem50 = menu.add("Set size 10%");
+//        mItem40 = menu.add("Set size 40%");
+//        mItem30 = menu.add("Set size 30%");
+        mItem20 = menu.add("Set size 20%");
         mItemType = menu.add(mDetectorName[mDetectorType]);
         return true;
     }
@@ -214,13 +221,15 @@ public class CameraDetectionActivity extends AppCompatActivity implements Camera
     public boolean onOptionsItemSelected(MenuItem item) {
         Log.i(TAG, "called onOptionsItemSelected; selected item: " + item);
         if (item == mItem50)
-            setMinSize(0.5f);
+            setMinSize(0.1f);
         else if (item == mItem40)
             setMinSize(0.4f);
         else if (item == mItem30)
             setMinSize(0.3f);
         else if (item == mItem20)
             setMinSize(0.2f);
+        else if (item == mItem)
+            setOptimizeSettings();
         else if (item == mItemType) {
             int tmpDetectorType = (mDetectorType + 1) % mDetectorName.length;
             item.setTitle(mDetectorName[tmpDetectorType]);
@@ -232,6 +241,22 @@ public class CameraDetectionActivity extends AppCompatActivity implements Camera
     private void setMinSize(float size) {
         mRelativeSize = size;
         mAbsoluteSize = 0;
+        minNeighbors = 2;
+        flags = 2;
+        scaleFactor = 1.1;
+        max_x=480;
+        max_y=480;
+    }
+
+    private void setOptimizeSettings() {
+        mRelativeSize = 30;
+        mAbsoluteSize = 30;
+        minNeighbors = 2;
+        flags = 0;
+        scaleFactor = 1.6;
+//        max_x=45;
+//        max_y=80;
+//        mOpenCvCameraView.setMaxFrameSize(1080, 720);
     }
 
     private void setDetectorType(int type) {
