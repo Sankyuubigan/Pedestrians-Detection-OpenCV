@@ -42,7 +42,7 @@ android {
 }
 
 dependencies {
-    compile project(':openCVLibrary310')
+    compile project(':openCVLibrary320')
     //    compile files('marvin/framework/marvin_1.5.4.jar')
     compile 'com.android.support:appcompat-v7:24.2.0'
     compile 'com.android.support:design:24.2.1'

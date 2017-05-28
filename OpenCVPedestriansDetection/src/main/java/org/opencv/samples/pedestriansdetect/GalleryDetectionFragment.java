@@ -261,9 +261,14 @@ public class GalleryDetectionFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-
         //Вызываем асинхронный загрузчик библиотеки
-        OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_3_1_0, getActivity(), mLoaderCallback);
+        if (!OpenCVLoader.initDebug()) {
+            Log.d("myQ", "Internal OpenCV library not found. Using OpenCV Manager for initialization");
+            OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_3_2_0, getActivity(), mLoaderCallback);
+        } else {
+            Log.d("myQ", "OpenCV library found inside package. Using it!");
+            mLoaderCallback.onManagerConnected(LoaderCallbackInterface.SUCCESS);
+        }
     }
 
     private BaseLoaderCallback mLoaderCallback = new BaseLoaderCallback(getActivity()) {

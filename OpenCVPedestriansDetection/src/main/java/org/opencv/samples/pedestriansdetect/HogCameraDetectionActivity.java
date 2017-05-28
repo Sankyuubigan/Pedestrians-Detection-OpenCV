@@ -5,7 +5,6 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
-import android.view.SurfaceView;
 import android.view.Window;
 import android.view.WindowManager;
 
@@ -15,10 +14,10 @@ import org.opencv.android.CameraBridgeViewBase.CvCameraViewFrame;
 import org.opencv.android.CameraBridgeViewBase.CvCameraViewListener2;
 import org.opencv.android.LoaderCallbackInterface;
 import org.opencv.android.OpenCVLoader;
+import org.opencv.core.Core;
 import org.opencv.core.CvType;
 import org.opencv.core.Mat;
 import org.opencv.core.MatOfDouble;
-import org.opencv.core.MatOfFloat;
 import org.opencv.core.MatOfRect;
 import org.opencv.core.Rect;
 import org.opencv.core.Scalar;
@@ -26,13 +25,18 @@ import org.opencv.imgproc.Imgproc;
 import org.opencv.objdetect.HOGDescriptor;
 
 public class HogCameraDetectionActivity extends Activity implements CvCameraViewListener2 {
+
     private static final String TAG = "OCVSample::Activity";
-
     private Mat mRgba;
-    private static final Scalar RECT_COLOR = new Scalar(0, 255, 0, 255); //Цвет прямоугольников
+    private Scalar RECT_COLOR;
     private Handler handler;
-
     private CameraBridgeViewBase mOpenCvCameraView;
+    // Определяем переменные, в которые будут помещены результаты поиска ( locations - прямоугольные
+    // области, weights - вес (можно сказать релевантность) соответствующей локации)
+    private MatOfRect locations;
+    private MatOfDouble weights;
+    private boolean flag = true;
+    private HOGDescriptor hog;
 
     private BaseLoaderCallback mLoaderCallback = new BaseLoaderCallback(this) {
         @Override
@@ -40,6 +44,12 @@ public class HogCameraDetectionActivity extends Activity implements CvCameraView
             switch (status) {
                 case LoaderCallbackInterface.SUCCESS: {
                     Log.i(TAG, "OpenCV loaded successfully");
+                    locations = new MatOfRect();
+                    weights = new MatOfDouble();
+                    hog = new HOGDescriptor();
+                    //Получаем стандартный определитель людей и устанавливаем его нашему дескриптору
+                    hog.setSVMDetector(HOGDescriptor.getDefaultPeopleDetector());
+                    RECT_COLOR = new Scalar(0, 255, 0, 255); //Цвет прямоугольников
                     mOpenCvCameraView.enableView();
                 }
                 break;
@@ -50,12 +60,6 @@ public class HogCameraDetectionActivity extends Activity implements CvCameraView
             }
         }
     };
-    // Определяем переменные, в которые будут помещены результаты поиска ( locations - прямоугольные
-    // области, weights - вес (можно сказать релевантность) соответствующей локации)
-    private MatOfRect locations = new MatOfRect();
-    private MatOfDouble weights = new MatOfDouble();
-    private boolean flag = true;
-    private HOGDescriptor hog;
 
     public HogCameraDetectionActivity() {
         Log.i(TAG, "Instantiated new " + this.getClass());
@@ -69,15 +73,9 @@ public class HogCameraDetectionActivity extends Activity implements CvCameraView
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
         setContentView(R.layout.activity_hog_camera_detection);
-
         mOpenCvCameraView = (CameraBridgeViewBase) findViewById(R.id.color_blob_detection_activity_surface_view);
-        mOpenCvCameraView.setVisibility(SurfaceView.VISIBLE);
         mOpenCvCameraView.setCvCameraViewListener(this);
         handler = new Handler();
-        hog = new HOGDescriptor();
-        //Получаем стандартный определитель людей и устанавливаем его нашему дескриптору
-        MatOfFloat descriptors = HOGDescriptor.getDefaultPeopleDetector();
-        hog.setSVMDetector(descriptors);
     }
 
     @Override
@@ -92,7 +90,7 @@ public class HogCameraDetectionActivity extends Activity implements CvCameraView
         super.onResume();
         if (!OpenCVLoader.initDebug()) {
             Log.d(TAG, "Internal OpenCV library not found. Using OpenCV Manager for initialization");
-            OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_3_1_0, this, mLoaderCallback);
+            OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_3_2_0, this, mLoaderCallback);
         } else {
             Log.d(TAG, "OpenCV library found inside package. Using it!");
             mLoaderCallback.onManagerConnected(LoaderCallbackInterface.SUCCESS);

@@ -54,7 +54,8 @@
         <activity
             android:name=".HogCameraDetectionActivity"
             android:label="@string/title_activity_hog_camera_detection"
-            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.AppCompat.NoActionBar"/>
     </application>
 
 </manifest>
