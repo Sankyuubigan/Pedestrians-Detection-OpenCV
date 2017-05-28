@@ -4,7 +4,7 @@
     android:versionCode="301"
     android:versionName="3.01">
 
-    <uses-sdk android:minSdkVersion="8" />
+    <uses-sdk android:minSdkVersion="12" />
 
     <supports-screens
         android:anyDensity="true"
@@ -37,13 +37,12 @@
         android:label="@string/app_name"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
-            android:name="org.opencv.samples.pedestriansdetect.CameraDetectionActivity"
+            android:name=".CameraDetectionActivity"
             android:configChanges="keyboardHidden|orientation"
             android:label="@string/app_name"
-            android:screenOrientation="landscape">
-        </activity>
+            android:screenOrientation="landscape" />
         <activity
-            android:name="org.opencv.samples.pedestriansdetect.MainActivity"
+            android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
@@ -52,6 +51,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".HogCameraDetectionActivity"
+            android:label="@string/title_activity_hog_camera_detection"
+            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
     </application>
 
 </manifest>

@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.nilden.appscorp.pedestriansdetect"
-        minSdkVersion 9
+        minSdkVersion 12
         targetSdkVersion 24
 
         // uncomment splits to decrease app size - google recommends to split only if the app is > 100mb
@@ -43,7 +43,10 @@ android {
 
 dependencies {
     compile project(':openCVLibrary310')
+    //    compile files('marvin/framework/marvin_1.5.4.jar')
     compile 'com.android.support:appcompat-v7:24.2.0'
     compile 'com.android.support:design:24.2.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.android.support:support-v4:24.2.1'
+    compile 'com.github.wseemann:FFmpegMediaPlayer:1.0.4'
 }
