@@ -23,20 +23,18 @@ import org.opencv.core.Scalar;
 import org.opencv.core.Size;
 import org.opencv.imgproc.Imgproc;
 import org.opencv.objdetect.CascadeClassifier;
-import org.opencv.objdetect.HOGDescriptor;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class CameraDetectionActivity extends AppCompatActivity implements CameraBridgeViewBase.CvCameraViewListener2 {
+public class HaarCameraDetectionActivity extends AppCompatActivity implements CameraBridgeViewBase.CvCameraViewListener2 {
 
     private static final String TAG = "myQ";
     private static final Scalar RECT_COLOR = new Scalar(0, 255, 0, 255);
     public static final int JAVA_DETECTOR = 0;
     public static final int NATIVE_DETECTOR = 1;
-//    public static final int HOG_DETECTOR = 2;
 
     private int minNeighbors = 2;
     private int flags = 2;
@@ -62,7 +60,6 @@ public class CameraDetectionActivity extends AppCompatActivity implements Camera
 
     private CameraBridgeViewBase mOpenCvCameraView;
 
-    private HOGDescriptor mHogDetector;
     private BaseLoaderCallback mLoaderCallback = new BaseLoaderCallback(this) {
         @Override
         public void onManagerConnected(int status) {
@@ -74,7 +71,7 @@ public class CameraDetectionActivity extends AppCompatActivity implements Camera
                     System.loadLibrary("detectionBasedTracker");
 
                     try {
-                        // load cascade file from application resources
+                        // загрузка каскадного файла из ресурсов приложения
                         InputStream is = getResources().openRawResource(R.raw.hogcascade_pedestrians);
                         File cascadeDir = getDir("cascade", Context.MODE_PRIVATE);
                         mCascadeFile = new File(cascadeDir, "haarcascade_fullbody.xml");
@@ -130,18 +127,14 @@ public class CameraDetectionActivity extends AppCompatActivity implements Camera
     private EditText setting_min_y;
     private EditText setting_scaleFactor;
 
-    public CameraDetectionActivity() {
-        mDetectorName = new String[3];
+    public HaarCameraDetectionActivity() {
+        mDetectorName = new String[2];
         mDetectorName[JAVA_DETECTOR] = "Java";
         mDetectorName[NATIVE_DETECTOR] = "Native (tracking)";
-//        mDetectorName[HOG_DETECTOR] = "HOG";
 
         Log.i(TAG, "Instantiated new " + this.getClass());
     }
 
-    /**
-     * Called when the activity is first created.
-     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         Log.i(TAG, "called onCreate");
@@ -169,9 +162,6 @@ public class CameraDetectionActivity extends AppCompatActivity implements Camera
         mOpenCvCameraView = (CameraBridgeViewBase) findViewById(R.id.fd_activity_surface_view);
         mOpenCvCameraView.setVisibility(CameraBridgeViewBase.VISIBLE);
         mOpenCvCameraView.setCvCameraViewListener(this);
-//        mOpenCvCameraView.setMinimumHeight(720);
-//        mOpenCvCameraView.setMinimumWidth(1280);
-//        mOpenCvCameraView.setMaxFrameSize(1280, 720);
     }
 
     public void fillingSettingsFromArguments() {
@@ -245,12 +235,7 @@ public class CameraDetectionActivity extends AppCompatActivity implements Camera
         }
 
         MatOfRect locations = new MatOfRect();
-
-//        if (mDetectorType == HOG_DETECTOR) {
-//            MatOfDouble weights = new MatOfDouble();
-//            mHogDetector.detectMultiScale(mGray, locations, weights);
-//        } else
-            if (mDetectorType == JAVA_DETECTOR) {
+        if (mDetectorType == JAVA_DETECTOR) {
             if (mJavaDetector != null)
                 mJavaDetector.detectMultiScale(mGray, locations, scaleFactor, minNeighbors, flags, // TODO: objdetect.CV_HAAR_SCALE_IMAGE
                         new Size(min_x, min_y), new Size(max_x, max_y));
@@ -260,19 +245,9 @@ public class CameraDetectionActivity extends AppCompatActivity implements Camera
         } else {
             Log.e(TAG, "Detection method is not selected!");
         }
-
         Rect[] locationsArray = locations.toArray();
         for (int i = 0; i < locationsArray.length; i++)
             Imgproc.rectangle(mRgba, locationsArray[i].tl(), locationsArray[i].br(), RECT_COLOR, 3);
-
-//        Point fontPoint = new Point();
-//        fontPoint.x = 15;
-//        fontPoint.y = mRgba.height() - 20;
-//        Imgproc.putText(mRgba,
-//                " width:" + mRgba.width() + " height:" + mRgba.height(),
-//                fontPoint, Core.FONT_HERSHEY_PLAIN, 1.5, new Scalar(255, 0, 0),
-//                2, Core.LINE_AA, false);
-
         return mRgba;
     }
 
@@ -290,7 +265,6 @@ public class CameraDetectionActivity extends AppCompatActivity implements Camera
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        Log.i(TAG, "called onOptionsItemSelected; selected item: " + item);
         if (item == mItem10)
             setMinSize(0.1f);
         else if (item == itemLongAway)
@@ -346,7 +320,6 @@ public class CameraDetectionActivity extends AppCompatActivity implements Camera
     private void setDetectorType(int type) {
         if (mDetectorType != type) {
             mDetectorType = type;
-
             if (type == NATIVE_DETECTOR) {
                 Log.i(TAG, "Detection Based Tracker enabled");
                 mNativeDetector.start();

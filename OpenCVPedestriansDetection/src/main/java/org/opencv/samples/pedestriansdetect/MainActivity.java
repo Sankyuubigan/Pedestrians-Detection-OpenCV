@@ -33,7 +33,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setVisibility(View.GONE);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -43,7 +42,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         .setAction("Action", null).show();
             }
         });
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -79,9 +77,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode,
-                                           @NonNull String permissions[],
-                                           @NonNull int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, @NonNull String permissions[], @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 
@@ -102,34 +98,25 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
         int id = item.getItemId();
-
-        if (id == R.id.nav_camera) {
-            Intent myIntent = new Intent(this, CameraDetectionActivity.class);
+        if (id == R.id.nav_camera_haar) {
+            Intent myIntent = new Intent(this, HaarCameraDetectionActivity.class);
             startActivity(myIntent);
         } else if (id == R.id.nav_gallery) {
             GalleryDetectionFragment f4 = new GalleryDetectionFragment();
@@ -138,20 +125,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
             ft.addToBackStack(null);
             ft.commit();
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_camera_hog) {
             Intent myIntent = new Intent(this, HogCameraDetectionActivity.class);
             startActivity(myIntent);
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_info) {
             InfoProjectFragment f4 = new InfoProjectFragment();
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             ft.replace(R.id.layout_container, f4); // f2_container is your FrameLayout container
             ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
             ft.addToBackStack(null);
             ft.commit();
-        } else if (id == R.id.nav_send) {
-
+        } else if (id == R.id.nav_settings) {
+        } else if (id == R.id.nav_version) {
         }
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
